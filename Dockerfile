@@ -1,9 +1,10 @@
-FROM ubuntu:17.04
+FROM ubuntu:19.04
 
 RUN apt-get update \
  && apt-get upgrade -y \
- && apt-get install -y --no-install-recommends sudo \
- && apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
+ && apt-get install -y --no-install-recommends sudo git \
+ && apt-get clean \
+ && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 # add idein user
 RUN useradd -m idein \
